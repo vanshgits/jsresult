@@ -1,0 +1,56 @@
+<section class="sec3">
+    <h2>Contact Me</h2>
+    <div class="sec3c">
+    <form action="/contact" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        <div>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+        </div>
+
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+
+        <div>
+            <button type="submit">Send Message</button>
+        </div>
+    </form>
+    </div>
+</section>
+
+<script>
+    // Listen for the form submission
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // You can add your AJAX request here if you want to submit the form without reloading
+
+        // Display a message indicating the form has been submitted
+        alert('Message sent!');
+
+        // Optionally, you can display a message on the page instead of an alert
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = 'Your message has been sent successfully!';
+        messageDiv.style.color = 'green'; // Change color as needed
+        messageDiv.style.marginTop = '20px';
+        messageDiv.style.fontWeight = 'bold';
+
+        // Append the message to the form container or any other element
+        document.querySelector('.contact-container').appendChild(messageDiv);
+
+        // Optionally reset the form fields
+        this.reset();
+    });
+</script>
+
